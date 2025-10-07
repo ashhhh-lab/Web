@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMK N 1 TRUCUK - Mencetak Generasi Vokasi Klaten</title>
+    
+    <style>
+        /* Variabel Warna */
+        :root {
+            --primary-color: #004d40; /* Hijau Tua Sekolah */
+            --secondary-color: #ffab00; /* Aksen Kuning/Emas */
+            --light-bg: #f0f4f8;
+            --text-color: #333;
+        }
+
+        /* Desain Dasar */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--light-bg);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            overflow: hidden;
+            padding: 0 15px;
+        }
+
+        /* Teks Bergerak (Marquee) */
+        .marquee-container {
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+            padding: 8px 0;
+            font-size: 1.1em;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Header dan Navigasi */
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        header .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+        header .logo-container img {
+            width: 80px;
+            height: 80px;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        header p {
+            margin-top: 5px;
+            font-size: 1.1em;
+            color: var(--secondary-color);
+        }
+
+        nav {
+            background-color: #00332c; 
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 15px 25px;
+            display: block;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        nav ul li a:hover {
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+        }
+
+        /* Bagian Konten Umum */
+        section {
+            padding: 40px 0;
+            margin-bottom: 20px;
+        }
+        .section-title {
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.2em;
+            border-bottom: 3px solid var(--secondary-color);
+            padding-bottom: 10px;
+            display: block;
+            width: 100%;
+        }
+        .card-grid {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            flex: 1 1 30%; 
+            min-width: 280px;
+            transition: transform 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Galeri Sekolah */
+        #galeri img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin-bottom: 15px;
+        }
+
+        /* Pimpinan Sekolah */
+        .pimpinan-card {
+            background-color: #e8f5e9; 
+            border: 1px solid #c8e6c9;
+            text-align: center;
+            padding: 15px;
+        }
+        .pimpinan-card img {
+            width: 130px;
+            height: 130px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid var(--primary-color);
+            margin-bottom: 10px;
+        }
+        .pimpinan-card h3 {
+            color: var(--primary-color);
+            margin: 5px 0 0;
+            font-size: 1.2em;
+        }
+        .pimpinan-card p {
+            color: #555;
+            margin: 0;
+            font-size: 0.9em;
+        }
+
+        /* Program Keahlian */
+        .program-list {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        .program-list li {
+            background: #e0f2f1;
+            padding: 10px 15px;
+            border-left: 5px solid #00796b;
+            border-radius: 5px;
+            flex: 1 1 calc(50% - 10px);
+            font-weight: 600;
+        }
+        @media (max-width: 768px) {
+            .program-list li {
+                flex: 1 1 100%; /* Satu kolom di layar kecil */
+            }
+            .card-grid {
+                flex-direction: column;
+            }
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+            font-size: 0.9em;
+        }
+        footer a {
+            color: var(--secondary-color);
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="marquee-container">
+        <marquee behavior="scroll" direction="left" scrollamount="8">
+            📢 SELAMAT DATANG DI SMK N 1 TRUCUK, PUSAT PENDIDIKAN VOKASI UNGGUL DI KLATEN 📢
+        </marquee>
+    </div>
+
+    <header>
+        <div class="container logo-container">
+            <img src="images/smkn1trucuk_logo.png" alt="Logo SMK N 1 TRUCUK">
+            <div>
+                <h1>SMK NEGERI 1 TRUCUK</h1>
+                <p>Mencetak Generasi Vokasi yang Siap Kerja dan Mandiri</p>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#profil">Profil</a></li>
+            <li><a href="#pimpinan">Pimpinan</a></li>
+            <li><a href="#program">Jurusan</a></li>
+            <li><a href="#galeri">Galeri</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        
+        <section id="profil">
+            <h2 class="section-title">Profil Singkat</h2>
+            <div class="card">
+                <p>SMK Negeri 1 Trucuk berkomitmen penuh untuk menyelenggarakan pendidikan kejuruan yang relevan dengan kebutuhan industri. Kami fokus pada pengembangan keterampilan praktis dan keahlian teknis siswa, mempersiapkan mereka untuk bekerja, melanjutkan pendidikan, atau berwirausaha. Visi kami adalah menjadi SMK rujukan nasional dalam pengembangan SDM vokasi yang unggul.</p>
+            </div>
+        </section>
+
+        <section id="galeri">
+            <h2 class="section-title">Lingkungan dan Fasilitas Sekolah</h2>
+            <div class="card">
+                <img src="images/foto_sekolah.jpg" alt="Gedung Utama SMK N 1 TRUCUK">
+                <p style="text-align: center; color: var(--primary-color);">Gedung Utama Pembelajaran dan Bengkel Praktik</p>
+            </div>
+        </section>
+
+        <section id="pimpinan">
+            <h2 class="section-title">Struktur Pimpinan Sekolah</h2>
+            <div class="card-grid">
+                
+                <div class="card pimpinan-card">
+                    <img src="images/foto_kepala_sekolah.jpg" alt="Foto Kepala Sekolah">
+                    <p>Kepala Sekolah</p>
+                    <h3>[Nama Lengkap Kepala Sekolah]</h3>
+                    <p>[Gelar Akademik, : S.Pd., M.Si.]</p>
+                </div>
+
+                <div class="card pimpinan-card">
+                    <img src="images/foto_wakil_ks1.jpg" alt="Foto Wakil Kepala Sekolah Bidang Kurikulum">
+                    <p>Waka Bidang Kurikulum</p>
+                    <h3>[Nama Wakil KS 1]</h3>
+                    <p>[Gelar Akademik, : S.T.]</p>
+                </div>
+
+                <div class="card pimpinan-card">
+                    <img src="images/foto_wakil_ks2.jpg" alt="Foto Wakil Kepala Sekolah Bidang Kesiswaan">
+                    <p>Waka Bidang Kesiswaan</p>
+                    <h3>[Nama Wakil KS 2]</h3>
+                    <p>[Gelar Akademik, misalnya: S.E.]</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="program">
+            <h2 class="section-title">Program Keahlian (Jurusan)</h2>
+            <div class="card">
+                <p>Kami menawarkan 5 program keahlian unggulan yang sangat relevan dengan pasar kerja saat ini:</p>
+                <ul class="program-list">
+                    <li>TKR - Teknik Kendaraan Ringan</li>
+                    <li>ATPH - Agribisnis Tanaman Pangan dan Hortikultura</li>
+                    <li>TKI - Teknik Kimia Industri</li>
+                    <li>ATR - Agri Ternak Ruminansia</li>
+                    <li>DKV - Desain Komunikasi Visual</li>
+                </ul>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Alamat: Jl. DPU Ngaran Mlese - Sabrang Lor - Trucuk - Klaten.</p>
+            <p>Website Resmi: <a href="http://www.smkn1trucuk.sch.id">www.smkn1trucuk.sch.id</a></p>
+            <p>&copy; 2024 SMK N 1 TRUCUK. Hak Cipta Dilindungi.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
